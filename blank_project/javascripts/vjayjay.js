@@ -1,5 +1,4 @@
 var Vjayjay = function(callback) {
-
   this.listeners = [];
   this.socket = new WebSocket("ws://localhost:8080");
 
