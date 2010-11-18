@@ -38,7 +38,6 @@ var Vjayjay = function(callback) {
 Vjayjay.plugins   = {};
 
 Vjayjay.plugin = function(name, callbackOrArgs) {
-  console.log(typeof(callbackOrArgs));
   if (typeof(callbackOrArgs) == 'function') {
     // Register the plugin since they're probably creating one.
     Vjayjay.plugins[name] = callbackOrArgs;
