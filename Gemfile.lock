@@ -1,9 +1,13 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    addressable (2.2.2)
     async_sinatra (0.3.0)
       sinatra (>= 1.0)
     daemons (1.1.0)
+    em-websocket (0.1.4)
+      addressable (>= 2.1.1)
+      eventmachine (>= 0.12.9)
     eventmachine (0.12.10)
     json (1.4.6)
     rack (1.2.1)
@@ -22,6 +26,8 @@ PLATFORMS
 
 DEPENDENCIES
   async_sinatra
+  em-websocket
+  eventmachine
   json
   rack
   rbcoremidi
