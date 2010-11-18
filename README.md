@@ -31,37 +31,30 @@ The documentation is far from complete and the project is in its infancy. Here's
 
 Listen to all events on channel 1 and output their pitch to the JavaScript console.
 
-<code>
+    // javascripts/application.js
 
-// javascripts/application.js
-
-Vjayjay(function(vj) {
-  // Listen to all events on channel 1.
-  vj.listen({ channel: 1 }, function(event) {
-    console.log(event.pitch);
-  });
-});
-
-</code>
+    Vjayjay(function(vj) {
+      // Listen to all events on channel 1.
+      vj.listen({ channel: 1 }, function(event) {
+        console.log(event.pitch);
+      });
+    });
 
 #### Plugins
 
 The code below behaves the same as the code from the previous section:
 
-<code>
-
-  // javascripts/library.js
-  Vjayjay.plugin('logPitch', function(vj, options) {
-    // Listen to all events on channel 1.
-    vj.listen(options, function(event) {
-      console.log(event.pitch);
+    // javascripts/library.js
+    Vjayjay.plugin('logPitch', function(vj, options) {
+      // Listen to all events on channel 1.
+      vj.listen(options, function(event) {
+        console.log(event.pitch);
+      });
     });
-  });
 
-  // javascripts/application.js
-  Vjayjay(function(vj) {
-    vj.plugin('logPitch', { channel: 1 });
-  });
+    // javascripts/application.js
+    Vjayjay(function(vj) {
+      vj.plugin('logPitch', { channel: 1 });
+    });
 
-</code>
 
