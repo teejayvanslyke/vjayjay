@@ -25,10 +25,26 @@ var Vjayjay = function(callback) {
       }
     });
   };
+  this.plugin = Vjayjay.plugin;
+
 
   this.listen = function(params, callback) {
     listeners.push(new Listener(params, callback));
   };
 
   callback(this);
+};
+
+Vjayjay.plugins   = {};
+
+Vjayjay.plugin = function(name, callbackOrArgs) {
+  console.log(typeof(callbackOrArgs));
+  if (typeof(callbackOrArgs) == 'function') {
+    // Register the plugin since they're probably creating one.
+    Vjayjay.plugins[name] = callbackOrArgs;
+  }
+  else {
+    // Call the plugin bound to this since they're probably calling it.
+    Vjayjay.plugins[name](this, callbackOrArgs);
+  }
 };
