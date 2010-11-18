@@ -24,5 +24,40 @@ create a unique live visual programming environment through a browser?
 3. Copy the `blank_project` folder to another folder.
 4. Run `bin/vjayjay` inside that folder.
 5. Your web browser will open and begin listening to MIDI input.
-6. Listen to MIDI and do stuff inside `javascripts/application.js`
+
+The documentation is far from complete and the project is in its infancy. Here's a crash course.
+
+#### The Vjayjay block
+
+Listen to all events on channel 1 and output their pitch to the JavaScript console.
+
+<code>
+  // javascripts/application.js
+
+  Vjayjay(function(vj) {
+    // Listen to all events on channel 1.
+    vj.listen({ channel: 1 }, function(event) {
+      console.log(event.pitch);
+    });
+  });
+</code>
+
+#### Plugins
+
+The code below behaves the same as the code from the previous section:
+
+<code>
+  // javascripts/library.js
+  Vjayjay.plugin('logPitch', function(vj, options) {
+    // Listen to all events on channel 1.
+    vj.listen(options, function(event) {
+      console.log(event.pitch);
+    });
+  });
+
+  // javascripts/application.js
+  Vjayjay(function(vj) {
+    vj.plugin('logPitch', { channel: 1 });
+  });
+</code>
 
