@@ -10,6 +10,11 @@ I've been looking at OpenFrameworks, Processing, etc for doing realtime music vi
 but my real expertise is in coding JavaScript and CSS. Why not build upon that knowledge on stage and 
 create a unique live visual programming environment through a browser?
 
+### Demo
+
+I've recorded some Vjayjay output (har har) and put it on YouTube. The source for this project is in 
+`examples/qtpi`: http://www.youtube.com/watch?v=Rog-RL-JcNM
+
 ### Requirements
 
 * Mac OS X
